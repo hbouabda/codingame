@@ -5,7 +5,7 @@ pipeline {
       stage('Compile') {
          steps {
             // Get some code from a GitHub repository
-            sh 'mvn compile'
+            bat 'mvn compile'
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
@@ -14,7 +14,7 @@ pipeline {
       stage('JUnit') {
          steps {
             // Get some code from a GitHub repository
-            sh 'mvn test'
+            bat 'mvn test'
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
@@ -23,7 +23,7 @@ pipeline {
       stage('Quality-Gate') {
          steps {
             // Get some code from a GitHub repository
-            sh 'mvn deploy'
+            bat 'mvn deploy'
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
          }
