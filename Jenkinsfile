@@ -20,13 +20,13 @@ pipeline {
          }
       }
       
-      stage('Quality-Gate') {
-         steps {
+      //stage('Quality-Gate') {
+         //steps {
             // Get some code from a GitHub repository
-            bat 'mvn deploy'
+            //bat 'mvn deploy'
             // To run Maven on a Windows agent, use
             // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-         }
-      }
+         //}
+      //}
    }
 }
