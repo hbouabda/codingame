@@ -1,6 +1,10 @@
 pipeline {
    agent any
 
+   options {
+        skipStagesAfterUnstable()
+    }
+	
    stages {
       stage('Compile') {
          steps {
@@ -26,6 +30,7 @@ pipeline {
             echo 'This will always run'
         }
         success {
+			archiveArtifacts(artifacts: '**/target/*.jar', allowEmptyArchive: true)
             echo 'This will run only if successful'
         }
         failure {
